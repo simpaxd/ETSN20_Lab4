@@ -11,9 +11,11 @@ public class Print {
 
         try {
             List<String> lines = Files.readAllLines(Paths.get(file));
+            int lineNumber = 0;
             for (String line : lines) {
+                lineNumber++;
                 if (line.contains(pattern)) {
-                    System.out.println(line);
+                    System.out.println(lineNumber + ":  " + line);
                 }
             }
         } catch (IOException e) {
